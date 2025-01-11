@@ -1,0 +1,22 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+div {
+  color: blue;
+}
+
+.container div {
+  color: red;
+}
+
+#myDiv {
+  color: green;
+}
+
+#myDiv.container {
+  color: purple;
+}
+
+```
+
+In this example, if the element with the id "myDiv" is also within a container with the class "container", the color purple will be applied. This happens due to the higher specificity of the `#myDiv.container` selector. However, an uncommon bug occurs when developers misunderstand the order of precedence of selectors and expect that the `#myDiv` will override the other selectors, which is incorrect because of the specificity rules.
